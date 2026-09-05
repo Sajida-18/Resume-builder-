@@ -108,14 +108,13 @@ async function logoutUserController(req, res) {
   });
 }
 
-
 /**
  * @name getMeController
  * @description: Get the current logged-in user details
  * @access Private
  */
 async function getMeController(req, res) {
-  const user = await usermodel.findById(req.user.id);
+  const user = await userModel.findById(req.user.id);
   res.status(200).json({
     user: {
       message: "User details fetched successfully",
